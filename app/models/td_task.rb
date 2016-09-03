@@ -1,0 +1,2 @@
+class TdTask < ApplicationRecord
+end
