@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :td_task do
-    description "MyString"
+    association :project
+    description { Faker::Lorem.sentence(3) }
     completed false
     priority 1
   end
