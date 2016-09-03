@@ -1,6 +1,7 @@
 class CreateTdTasks < ActiveRecord::Migration[5.0]
   def change
     create_table :td_tasks do |t|
+      t.integer :project_id
       t.string :description
       t.boolean :completed
       t.integer :priority
