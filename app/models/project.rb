@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  validates :description, presence: true
+
   def completed_tasks
     tasks.where(completed: true)
   end

@@ -11,6 +11,18 @@ RSpec.describe Project, :type => :model do
     end
   end
 
+  describe '#attributes.validations' do
+    it 'is not valid without a description' do
+      project = build(:project, description: nil)
+      expect(project).to_not be_valid
+    end
+
+    it 'is valid with a description' do
+      project = build(:project, description: 'Hey check out this super project.')
+      expect(project).to be_valid
+    end
+  end
+
   describe '#tasks' do
     before :each do
       @project = create(:project)
