@@ -5,6 +5,6 @@ FactoryGirl.define do
     association :project
     description { Faker::Lorem.sentence(3) }
     completed false
-    priority 1
+    priority { rand(1..10) }
   end
 end
