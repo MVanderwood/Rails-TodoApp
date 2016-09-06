@@ -3,9 +3,9 @@
 FactoryGirl.define do
   factory :project do
     description { Faker::Lorem.sentence(3) }
-    after(:build) do |project|
+    after(:create) do |project|
       4.times do
-        project.tasks << FactoryGirl.build(:task, project: project)
+        create(:td_task, project_id: project.id)
       end
     end
   end
